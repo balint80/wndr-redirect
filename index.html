@@ -85,6 +85,24 @@
       align-items: center;
     }
 
+    .store-badge {
+      height: 54px;
+      width: auto;
+      display: block;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    
+    .store-badge:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+    
+    /* Google's badge has extra padding built in, this compensates */
+    .android-badge {
+      height: 80px;
+      margin: -13px 0;
+    }
+
     .redirecting {
       font-size: 1.1rem;
       opacity: 0.8;
@@ -124,11 +142,15 @@
 
   <!-- Fallback buttons (shown if device not detected) -->
   <div id="fallback-buttons" class="btn-both" style="display:none;">
-    <a id="ios-btn" class="btn btn-ios" href="#" target="_blank">
-      Letöltés iPhone-ra
+    <a id="ios-btn" href="#" target="_blank">
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+           alt="Download on the App Store"
+           class="store-badge" />
     </a>
-    <a id="android-btn" class="btn btn-android" href="#" target="_blank">
-      Letöltés Android-ra
+    <a id="android-btn" href="#" target="_blank">
+      <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+           alt="Get it on Google Play"
+           class="store-badge android-badge" />
     </a>
   </div>
 
